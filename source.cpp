@@ -90,6 +90,45 @@ int chapter_3_4_3() {
 	return 0;
 }
 
+// program that reads a stream of words and checks for repeating words
+// added exit functionality not in the book.
+int chapter_3_5() {
+	cout << "Please enter a string. Type 'exit' to exit \n";
+	string previous = " ";
+	string current;
+	while (cin >> current) {
+		if (current == "exit") {
+			break;
+		}
+		if (previous == current) {
+			cout << "repeated word: " << current << "\n";
+		}
+		previous = current;
+	}
+
+	return 0;
+}
+
+// upgraded example of find repeated words
+int chapter_3_6() {
+	cout << "please enter a string. Type 'exit' to exit. \n";
+	int number_of_words = 0;
+	string previous = " ";
+	string current;
+	while (cin >> current) {
+		++number_of_words;
+		if (current == "exit") {
+			break;
+		}
+		if (previous == current) {
+			cout << "word number " << number_of_words << " repeated " << current << "\n";
+		}
+		previous = current;
+	}
+
+	return 0;
+}
+
 
 
 int main() // C++ programs start by executing the function main
@@ -102,7 +141,9 @@ int main() // C++ programs start by executing the function main
 	// chapter_3_1();
 	// chapter_3_4();
 	// chapter_3_4_2();
-	chapter_3_4_3();
+	// chapter_3_4_3();
+	// chapter_3_5();
+	chapter_3_6();
 
 
 }
