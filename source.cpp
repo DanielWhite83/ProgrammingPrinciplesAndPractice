@@ -2,6 +2,7 @@
 // Programming Principles and Practice using C++ by Bjarne Stroustrup
 #include<iostream>
 #include<string>
+#include<list>
 using namespace std;
 
 
@@ -109,6 +110,8 @@ int chapter_3_5() {
 	return 0;
 }
 
+
+
 // upgraded example of find repeated words
 int chapter_3_6() {
 	cout << "please enter a string. Type 'exit' to exit. \n";
@@ -129,6 +132,67 @@ int chapter_3_6() {
 	return 0;
 }
 
+int chapter_3_ex_1() {
+	// goal: write a program that converts milkes to kilometers
+
+	cout << "Please enter miles and I will convert it to kilometers: \n";
+	double miles;
+	cin >> miles;
+	// input isn't sanitized, but I suppose that will be learned later
+	double kilometers = miles * 1.609;
+	cout << miles << " miles equals " << kilometers << " kilometers. \n";
+
+	return 0;
+}
+
+int chapter_3_ex_2() {
+	// goal write a program that prolmpts the user to enter two int values.
+	// report: which one is larger, smaller, sum, difference, product, and ratio
+	cout << "Please enter two numbers: ";
+	int val1;
+	int val2;
+	cin >> val1 >> val2;
+	if (val1 == val2) {
+		cout << "The numbers are the same size.\n";
+	}
+	else if (val1 > val2) {
+		cout << val1 << " is larger than " << val2 << "\n.";
+	}
+	else if (val2 > val1) {
+		cout << val2 << " is larger than " << val1 << "\n.";
+	}
+	else {
+		// should never reach
+	}
+	cout << "The sum of " << val1 << " and " << val2 << " is " << val1 + val2 << "\n.";
+	cout << "The difference between " << val1 << " and " << val2 << " is " << abs(val1 - val2) << "\n.";
+	cout << "The product of " << val1 << " and " << val2 << " is " << val1 * val2 << "\n.";
+	cout << "The ratio of " << val1 << " and " << val2 << " is " << (double) val1 / val2 << "\n.";
+
+	return 0;
+}
+
+int chapter_3_ex_3() {
+	cout << "Please enter 3 numbers: ";
+	list<int> myIntList;
+	int int1;
+	int int2;
+	int int3;
+	cin >> int1 >> int2 >> int3;
+	myIntList.push_back(int1);
+	myIntList.push_back(int2);
+	myIntList.push_back(int3);
+	myIntList.sort();
+
+	list<int>::iterator it;
+
+	for (it = myIntList.begin(); it != myIntList.end(); ++it) {
+		cout << *it << ", ";
+	}
+
+	return 0;
+}
+
 
 
 int main() // C++ programs start by executing the function main
@@ -143,7 +207,11 @@ int main() // C++ programs start by executing the function main
 	// chapter_3_4_2();
 	// chapter_3_4_3();
 	// chapter_3_5();
-	chapter_3_6();
+	// chapter_3_6();
+	// chapter_3_ex_1();
+	// chapter_3_ex_2();
+	chapter_3_ex_3();
+
 
 
 }
